@@ -4,6 +4,8 @@
     DevOpsifying the GO web Appication by containerizing the App, Deploying in the Kubernetes Cluster, automating the CICD Pipeline with GitOps Practice
 
 ## pre-requisite,
+- MultiStage Docker build
+- Distroless Image
 
 
 ## Environment Setup,
@@ -43,7 +45,16 @@
       ./main
     ```
 - Containerize the GO app
-  
+  - Building the image from the Docker file
+    ```bash
+      docker build -t go-app .
+    ```
+  - running the container from the build image
+    ```bash
+      docker run -itd -p 8080:8080 go-app
+    ```
+    Hurrah 🥳 now go web app is accessible from the <public ip>:8080
+    
 - Create kubernetes Cluster and K8s Deployment, Service, and Ingress for deploying the application in k8s cluster
 -  
 
