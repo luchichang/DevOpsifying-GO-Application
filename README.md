@@ -49,6 +49,11 @@
     ```bash
       docker build -t go-app .
     ```
+         or
+    pull the image from repository
+    ```bash
+       docker pull dinesht0006/go-app
+    ```
   - running the container from the build image
     ```bash
       docker run -itd -p 8080:8080 go-app
