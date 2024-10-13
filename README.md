@@ -7,6 +7,8 @@
 
 
 ## Environment Setup,
+- (optional) Install Go language for running in local environment
+  https://go.dev/doc/install
 - Install Docker in your local machine for building the image and running Containers on top of your base or host machine
   ```bash
      docker version
