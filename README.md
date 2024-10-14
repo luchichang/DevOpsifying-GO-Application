@@ -122,7 +122,11 @@
        kubectl get ing
     ```
 NOTE: Ingress controller maps the ingress using the __ingressClassName__ attribute
-  - check the po
+  - create custom domain name and map it to the __/etc/hosts__ file
+     ```bash
+        <ingress Controllers load balancer IP>  <Custom Domain Name>
+     ```
+     
       
 -  Create Helm Charts
 
