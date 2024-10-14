@@ -3,6 +3,14 @@
 ## Description,
     DevOpsifying the GO web Appication by containerizing the App, Deploying in the Kubernetes Cluster, automating the CICD Pipeline with GitOps Practice
 
+## Objective, 
+- Containerize the application and store the image artifactory in the docker hub repository
+- Create k8s deployment, service, ingress in k8s cluster
+- Create __Ingress Controller__
+- Create __EKS__ Cluster
+- Create __Helm__ Chart.
+- automate the Workflow with __CICD Pipeline__
+
 ## pre-requisite,
 - MultiStage Docker build
 - Distroless Image
@@ -24,6 +32,8 @@
   https://eksctl.io/installation/
 - install __awscli__ by following the instructions in below link
   https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+- install the nginx Ingress Controller
+  https://kubernetes.github.io/ingress-nginx/deploy/
 
 ## Steps,
 - First build & run the Application locally. so, that DevOps Engineer can get the nuances of how the web app is working.
@@ -106,9 +116,7 @@
        kubectl get ing
     ```
   - (pre requisite) inorder to make ingress in effect first ingress controller need to be created
-    ```bash
-       kubectl get ing
-    ```
+   
   - ensure ingress controlled is mapped to the ingress
     ```bash
        kubectl get ing
