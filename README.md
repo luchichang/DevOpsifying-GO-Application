@@ -126,7 +126,7 @@ NOTE: Ingress controller maps the ingress using the __ingressClassName__ attribu
      ```bash
         <ingress Controllers load balancer IP>  <Custom Domain Name>
      ```
+Note: Custom Domain Name mapped to the __/etc/hosts__ file is accessible only locally
      
-      
 -  Create Helm Charts
 
