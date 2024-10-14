@@ -57,7 +57,7 @@
     ```bash
       docker build -t go-app .
     ```
-[or]
+             [or]
     pull the image from repository
     ```bash
        docker pull dinesht0006/go-app
@@ -73,7 +73,7 @@
      ```bash
        eksctl create cluster --name prod-cluster --region ap-south-1
     ```
-similarly for deleting the EKS cluster execute the below command
+         similarly for deleting the EKS cluster execute the below command
     ```bash
        eksctl delete cluster --name <cluster-name> --region <created-region>
     ```
@@ -93,7 +93,7 @@ similarly for deleting the EKS cluster execute the below command
     ```bash
        kubectl get pod
     ```
-for viewing the service 
+        for viewing the service 
     ```bash
        kubectl get svc
     ```
