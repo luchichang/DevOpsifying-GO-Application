@@ -35,7 +35,7 @@
   https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - install the nginx Ingress Controller
   https://kubernetes.github.io/ingress-nginx/deploy/
-- Install __HelmCLI__ by following the instructions
+- Install __HelmCLI__ by following the instructions from the below URL
   https://helm.sh/docs/intro/install/
 
 ## Steps,
