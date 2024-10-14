@@ -6,6 +6,9 @@
 ## pre-requisite,
 - MultiStage Docker build
 - Distroless Image
+- K8s Object ( Deployment, Replica set, pods)
+- k8s service (ClusterIp, NodePort, LoadBalancer)
+- k8s Ingress & Ingress Controller
 
 
 ## Environment Setup,
@@ -15,7 +18,12 @@
   ```bash
      docker version
   ```
-- create K8s Cluster
+- install __Kubectl__ by following the instructions in below link
+  https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+- install __eksctl__ by following the instructions in below link
+  https://eksctl.io/installation/
+- install __awscli__ by following the instructions in below link
+  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 ## Steps,
 - First build & run the Application locally. so, that DevOps Engineer can get the nuances of how the web app is working.
@@ -49,7 +57,7 @@
     ```bash
       docker build -t go-app .
     ```
-         or
+[or]
     pull the image from repository
     ```bash
        docker pull dinesht0006/go-app
@@ -61,5 +69,52 @@
     Hurrah 🥳 now go web app is accessible from the <public ip>:8080
     
 - Create kubernetes Cluster and K8s Deployment, Service, and Ingress for deploying the application in k8s cluster
--  
+  - create __AWS EKS__ cluster
+     ```bash
+       eksctl create cluster --name prod-cluster --region ap-south-1
+    ```
+similarly for deleting the EKS cluster execute the below command
+    ```bash
+       eksctl delete cluster --name <cluster-name> --region <created-region>
+    ```
+  - ensure EKS cluster is created
+    ```bash
+       eksctl get cluster
+    ```
+  - create object by applying the deployment.yaml file to the kubectl
+    ```bash
+       kubectl apply -f deployment.yaml
+    ```
+  - create service by applying the service.yaml file to the kubectl
+    ```bash
+       kubectl apply -f service.yaml
+    ```
+  - check the pod is running and try to access it in the nodeport
+    ```bash
+       kubectl get pod
+    ```
+for viewing the service 
+    ```bash
+       kubectl get svc
+    ```
+  - create Ingress by applying the ingress.yaml file to the kubectl
+    ```bash
+       kubectl apply -f ingress.yaml
+    ```
+  - ensure ingress is created
+    ```bash
+       kubectl get ing
+    ```
+  - (pre requisite) inorder to make ingress in effect first ingress controller need to be created
+    ```bash
+       kubectl get ing
+    ```
+  - ensure ingress controlled is mapped to the ingress
+    ```bash
+       kubectl get ing
+    ```
+NOTE: Ingress controller maps the ingress using the __ingressClassName__ attribute
+  - check the po
+      
+-  Create Helm Charts
 
