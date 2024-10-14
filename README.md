@@ -17,6 +17,7 @@
 - K8s Object ( Deployment, Replica set, pods)
 - k8s service (ClusterIp, NodePort, LoadBalancer)
 - k8s Ingress & Ingress Controller
+- Helm & Helm Chart
 
 
 ## Environment Setup,
@@ -34,6 +35,8 @@
   https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - install the nginx Ingress Controller
   https://kubernetes.github.io/ingress-nginx/deploy/
+- Install __HelmCLI__ 
+  https://helm.sh/docs/intro/install/
 
 ## Steps,
 - First build & run the Application locally. so, that DevOps Engineer can get the nuances of how the web app is working.
