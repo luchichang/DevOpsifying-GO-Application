@@ -122,8 +122,12 @@
    
   - ensure ingress controlled is mapped to the ingress
     ```bash
-       kubectl get ing
+       kubectl edit ing <ingress-podname> -n <namespace>
     ```
+  - get the Ingress controller Load balancer IP address
+    ```bash
+      nslookup <loadbalancer address>
+    ``` 
 NOTE: Ingress controller maps the ingress using the __ingressClassName__ attribute
   - create custom domain name and map it to the __/etc/hosts__ file
      ```bash
