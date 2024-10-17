@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 )
 
 type PageData struct {
@@ -17,12 +18,22 @@ func main() {
 	http.HandleFunc("/about", aboutHandler)
 	http.HandleFunc("/submit", formHandler)
 
+	port:= "8080"
+
+	if len(os.Args) > 1{
+		port = os.Args[1]
+	 
+	}
+
+
 	// Static file handling (for serving CSS, JS, etc.)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
-	fmt.Println("Server starting at http://localhost:8080")
-	err := http.ListenAndServe(":8080", nil)
+	fmt.Println("Server starting at http://localhost:",port)
+	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
+
+	        fmt.Println("Error Starting Server at  http://localhost:",port)
 		log.Fatal(err)
 	}
 }
