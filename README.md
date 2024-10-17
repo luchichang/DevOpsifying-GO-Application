@@ -134,6 +134,11 @@ NOTE: Ingress controller maps the ingress using the __ingressClassName__ attribu
         <ingress Controllers load balancer IP>  <Custom Domain Name>
      ```
 Note: Custom Domain Name mapped to the __/etc/hosts__ file is accessible only locally
+
+NOTE: Pods can be debuged within the cluster 
+```bash
+  kubectl run -i --tty --rm debug --image=busybox -- sh  
+```
      
 -  Create Helm Charts
 
