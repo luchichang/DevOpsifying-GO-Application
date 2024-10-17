@@ -141,4 +141,18 @@ NOTE: Pods can be debuged within the cluster
 ```
      
 -  Create Helm Charts
+  - create the Helm Chart
+    ```bash
+       helm create <chart name>
+    ```
+    
+  - create the release name and run the helm chart
+    ```bash
+       helm install <release-name> <chart path>
+    ``` 
+  - uninstall the release
+    ```bash
+       helm uninstall <release-name>
+    ```
+-  CI Pipeline Setup
 
