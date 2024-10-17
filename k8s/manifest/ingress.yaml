@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "foo.bar.com"
+  - host: "k8s-app.co"
     http:
       paths:
       - pathType: Prefix
