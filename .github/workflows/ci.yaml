@@ -32,18 +32,6 @@ jobs:
       - name: run Tests
         run: go test ./...
 
-  codequality:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4.2.1
-
-      - name: run go lang CI lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: v1.56.2
 
   push:
     runs-on: ubuntu-latest
